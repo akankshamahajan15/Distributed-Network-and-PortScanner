@@ -32,8 +32,6 @@ SYN—ACK)
 - Any of the above host/port scanning methods must also be able to be done sequentially or in random order
 (e.g. instead of first scanning port 1, then port 2, then port 3, etc., randomize the order of ports, or order of
 IP addresses)It checks whether an IP address is alive or not.
-Github link for this project:
-https://github.com/PriyankaSangtani/System-Security-Distributed-Network-and-Port-Scanner
 
 2 WorkFlow
 The Web UI running on the Master node is built usingDjango Frameworkwhich follows a Model-View-Template
