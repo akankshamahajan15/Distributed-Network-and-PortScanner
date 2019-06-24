@@ -1,0 +1,45 @@
+{% extends "my_project/base.html" %}
+
+{% block content %}
+
+    <h3>Records list </h3>
+
+    <table class="table">
+            <thead>
+              <tr>
+                  <th scope="col">Security Token</th>
+                <th scope="col">IP</th>
+                <th scope="col">Start Time</th>
+                
+                <th scope="col">Destination IP</th>
+                <th scope="col">Destination ports</th>
+                <th scope="col">Result</th>
+                <th scope="col">Active</th>
+                <th scope="col">Result Time</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                    {% for r in records %}
+                    <tr> 
+                        <td>{{ r.token }} </td>
+                        <td>{{ r.slave_ip }} </td> 
+                        <td>{{ r.start_time }}</td>
+                        
+                        <td>{{ r.dest_ip }}</td>
+                        <td>{{ r.port_range }}</td>
+                        <td>{{ r.result }}</td>
+                        <td>{{ r.active }}</td>
+                        <td>{{ r.result_time }}</td>
+                    </tr>
+                
+                    {% endfor %}
+
+            </tbody>
+    </table>
+    
+
+
+
+    <a href="/">Home</a>
+{% endblock %}

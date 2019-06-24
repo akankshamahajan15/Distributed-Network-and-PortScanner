@@ -1,0 +1,82 @@
+{% extends "my_project/base.html" %}
+
+<!-- Content block ↓ -->
+{% block content %}
+
+<!-- 
+    <div class="hero-unit ">
+            <div class = "center">
+         <a href="/formset" class="btn btn-primary">ADD ENTRY</a>     &nbsp;       <a href="/scan_api/records" class="btn btn-primary">SHOW RECORDS</a>  &nbsp;  <a href="/scan_api/jobs" class="btn btn-primary">SHOW JOBS</a>  &nbsp;  <a href="/scan_api/jobdata" class="btn btn-primary">SHOW USER VIEW</a>
+                </div>
+    <br>
+    </div>
+    <br> <br> <br> <br> <br>
+    <div class="  left">
+        <h4>References</h4>
+        <div class="right">
+            <a target="_blank" href="http://twitter.github.com/bootstrap/" class="btn btn-success">Bootstrap Reference</a> <br>
+            <a target="_blank" href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#for" class="btn btn-success">Django Code Reference</a>
+            <br></r><a target="_blank" href="https://github.com/morelab/django-bootstrap" class="btn btn-success">Bootstrap Code Reference</a>
+        </div>
+    </div> -->
+
+	<div class="topnav" id="myTopnav">
+		<div id="content">
+			<span class="slide">
+				<a href="#" onclick="openSlideMenu()">
+					<i class="fas fa-bars"></i>
+				</a>
+			</span>
+			<div id="menu" class="nav" style="width: 275px;">
+				<a href="#" class="close" onclick="closeSlideMenu()">
+					<i class="fas fa-times"></i>
+				</a>
+				<img src="{{ STATIC_PREFIX }}img/pic1.jpg", width="170px", height="170px", class="border">
+			<a href="#" onclick="about_func()">About</a>
+			<a href="/formset">Create Scan Request</a>
+			<a href="/scan_api/records">View Scan Results</a>
+			<a href="/scan_api/jobs">View Submitted Requests</a>
+			<a href="/scan_api/jobdata">User View</a>
+		</div>
+	</div>
+
+
+
+		<h1 id="plot_heading", class="default-heading">Distributed Network and TCP Port Scanner
+		</h1>
+	</div>
+	<div class="text">
+		<p id="about_text">A distributed network and port scanner consists of the following components:
+		<ul>
+			<li>A Master node on which a web front-end runs. This is used to schedule scans and store the scan results.</li>
+			<li>Scan Agents that receive scan jobs from the Master node and conduct the actual network and port scan.</li>
+		</ul>
+		</p>
+		<p>
+		The Master node serves the Web UI using Django web framework and Bootstrap. The scan agents subscribe to this Master node when they are ready to accept scan requests. The Master then distributes the scan requests among the multiple scan agents which are subscribed.
+		</p>
+		<p>
+		The following functionalities are supported:
+		<ul>
+			<li>Check whether an IP address is alive</li>
+			<li>Find which IP address are alive in a block of IP addresses</li>
+			<li>Port scan an IP address for a given set of ports using any of the following scanning modes:
+				<ul>
+					<li>Full TCP Connect Scan</li>
+					<li>TCP SYN Scan</li>
+					<li>TCP FIN Scan</li>
+				</ul>
+			<li>Scan ports sequentially or in random order</li>
+		</ul>
+		</p>
+	</div>
+	<div class="References">
+        <h4>References</h4>
+        
+		<ul>
+			<li><a href="http://twitter.github.com/bootstrap/">Bootstrap Reference</a></li>
+			<li><a href="https://docs.djangoproject.com/en/1.8/ref/templates/builtins/#for">Django Code Reference</a></li>
+			<li><a href="https://github.com/morelab/django-bootstrap">Bootstrap Code Reference</a></li>
+		</ul>
+	</div>
+{% endblock %}

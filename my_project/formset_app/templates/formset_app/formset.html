@@ -1,0 +1,81 @@
+{% extends "my_project/base.html" %}
+
+<!-- Content block ↓ -->
+{% block content %}
+
+    <form action="" method="post" class="form">
+        {% csrf_token %}
+
+        <legend>Add Request</legend>
+
+        <fieldset>
+           
+            {% for field in form %}
+           
+                {% if field.errors %}
+
+                    <div class="control-group error">
+                        <label class="control-label" for="inputError">{{ field.label }}</label>
+                        <div class="controls">
+                            {{ field }}
+                            <span class="help-inline">{{ field.errors|striptags }}</span>
+                        </div>
+                    </div>
+
+                {% else %}
+                    <div class="control-group">
+                        <label class="control-label">{{ field.label }}</label>
+                        <div class="controls">
+                            {{ field }}
+                        </div>
+                    </div>
+                   
+                {% endif %}
+                
+                
+            {% endfor %}
+
+            
+            <div class="form-actions">
+                <button type="submit" name="submit" class="btn btn-primary"><i class="icon-ok icon-white"></i> Add</button>
+                <!-- <button type="reset" class="btn">Reset</button> -->
+                <a class="btn btn-danger" href="/">Cancel</a>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock %}
+
+
+<!-- Scripts block ↓ -->
+{% block scripts %}
+
+    <script src="{{ STATIC_PREFIX }}js/jquery.formset.js"></script>
+
+    <script type="text/javascript">
+        $(window).load(function() {
+            $("textarea").attr("rows", 3);
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function() {
+            $('#attack_formset tbody tr').formset({
+                prefix: '{{ attack_formset.prefix }}',
+                addText: 'Nuevo ataque',
+                addCssClass: 'btn btn-info',
+                deleteText: ' Eliminar',
+                deleteCssClass: 'btn',
+            });
+
+            $('#type_formset tbody tr').formset({
+                prefix: '{{ type_formset.prefix }}',
+                addText: 'Nuevo tipo',
+                addCssClass: 'btn btn-info',
+                deleteText: 'Eliminar',
+                deleteCssClass: 'btn',
+            });
+        })
+    </script>
+
+{% endblock %}

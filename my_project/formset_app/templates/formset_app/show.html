@@ -1,0 +1,16 @@
+{% extends "my_project/base.html" %}
+
+{% block content %}
+
+    <h3>Pokemon list </h3>
+
+    {% for p in pok %}
+        <br> Name: {{ p.name }} ,Description: {{ p.description }}</br>
+        
+
+    {% endfor %}
+
+    <a href="/formset">Add More</a>
+    <a href="/">Home</a>
+
+{% endblock %}

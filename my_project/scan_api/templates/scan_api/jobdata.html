@@ -1,0 +1,48 @@
+{% extends "my_project/base.html" %}
+
+{% block content %}
+
+    <h3>Jobs data </h3>
+    
+
+    <table class="table">
+            <thead>
+              <tr>
+                
+                    <th scope="col">Destination IP</th>
+                    <th scope="col">Port Range <br>or Port</th>
+                    <!-- <th scope="col">Client List</th> -->
+                    <th scope="col">Result Open <br>/Alive Check </or></th>
+                    <th scope="col">Result Filter</th>
+                    <th scope="col">Port Checks <br> Remaining</th>
+                    <!-- <th scope="col">Port Remaining alloted</th> -->
+                    <th scope="col">Status</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">Result Time</th>   
+              </tr>
+            </thead>
+            <tbody>
+                    {% for j in jobdata %}
+                <tr>
+                        <td>{{ j.ip}} </td>
+                        <td>{{ j.port_range}} </td>
+                        <!-- <td>{{ j.client_list}} </td> -->
+                        <td >{{ j.result1}} </td>
+                        <td>{{ j.result2}} </td>
+                        <td>{{ j.ports_remaining}} </td>
+                        
+                        <!-- <td>{{ j.ports_remaining_after_alloted}} </td> -->
+                        <td>{{ j.status}} </td>
+                        <td>{{ j.job_time}} </td>
+                        <td>{{ j.result_time}} </td>
+                </tr>
+                    {% endfor %}
+
+            </tbody>
+    </table>
+    
+
+
+
+    <a href="/">Home</a>
+{% endblock %}

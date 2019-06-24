@@ -1,0 +1,101 @@
+/*Sidebar Menu*/
+
+.nav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	opacity: 0.9;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.7s;
+}
+
+.nav a {
+	display: block;
+	padding: 20px 30px;
+	font-size: 24px;
+	text-decoration: none;
+	color: #eee;
+}
+
+.nav a:hover {
+	color: #fff;
+  font-weight: bold;
+	transition: 0;
+}
+
+.nav .close {
+	position: absolute;
+	top: 0;
+	right: 22px;
+	margin-left: 50px;
+	font-size: 30px;
+}
+
+.slide a {
+	color: #000;
+	font-size: 35px;
+}
+
+#content {
+	padding: 14px;
+	overflow: hidden;
+	width: 10%;
+	transition: margin-left 0.7s;
+	float: left;
+	margin-left: 0px;
+}
+
+.container {
+	width: 100%;
+}
+
+img {
+  margin-top: 35px;
+  margin-left: 40px;
+}
+
+.border {
+  border-width: 2px;   
+  border-color: #777;   
+  border-style: solid;
+}
+
+/*Top Nav*/
+
+.topnav {
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.default-heading {
+    display:inline-block;
+    float: center;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 3em;
+    position: fixed;
+}
+
+.text {
+    margin-left: 15em;
+    margin-top: 1.5em;
+    margin-bottom: 8.5em;
+    font-size: 20px;
+    margin-right: 2em;
+}
+
+.References {
+	margin-left: 20em;
+}
+
+.References ul li {
+	float: left;
+	margin-right: 2em;
+}
+

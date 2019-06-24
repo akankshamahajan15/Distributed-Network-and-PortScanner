@@ -1,0 +1,42 @@
+{% extends "my_project/base.html" %}
+
+{% block content %}
+
+    <h3>Jobs list </h3>
+
+    <table class="table">
+            <thead>
+              <tr>
+                
+                <th scope="col">Destination IP</th>
+                <th scope="col">Port Range or Port (-1 for ping)</th>
+                <th scope="col">Subnet</th>
+                <th scope="col">Time</th>
+                <th scope="col">Type</th>
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+                    {% for j in jobs %}
+                <tr>
+                        <td>{{ j.ip }} </td>
+                        <td>{{ j.port_range }} </td>
+                        <td>{{ j.subnet }} </td>
+                        <td>{{ j.job_time }} </td>
+                        <td>{{ j.type_scan }} </td>
+                    
+                </tr>
+                    {% endfor %}
+
+            </tbody>
+    </table>
+
+
+
+    
+
+
+
+    <a href="/">Home</a>
+{% endblock %}
